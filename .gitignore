@@ -11,22 +11,21 @@
 *.gch
 *.pch
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+*.~bpr
+*.~cpp
+*.~h
+*.ddp
+*.tds
+*.ilc
+*.ild
+*.ilf
+*.ils
 
-# Fortran module files
-*.mod
-*.smod
+*.ini
+*.stat
+*.local
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+__*
+hgt
+cache
+Win32

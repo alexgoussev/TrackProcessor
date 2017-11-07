@@ -1,0 +1,2 @@
+NO_TILE_PNG           RCDATA    "img\notile.png"
+NO_MAP_PNG            RCDATA    "img\nomap.png"

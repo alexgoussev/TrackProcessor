@@ -1,0 +1,608 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{209D88AC-2335-4B2F-B358-D56B276FCC86}</ProjectGuid>
+        <ProjectVersion>18.2</ProjectVersion>
+        <FrameworkType>VCL</FrameworkType>
+        <MainSource>TrackProcessor.cpp</MainSource>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <TargetedPlatforms>1</TargetedPlatforms>
+        <AppType>Application</AppType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+        <Cfg_1_Win32>true</Cfg_1_Win32>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <SanitizedProjectName>TrackProcessor</SanitizedProjectName>
+        <BCC_PCHName_Clang>SDIPCH.h</BCC_PCHName_Clang>
+        <PackageImports>DataSnapIndy10ServerTransport;bindcompfmx;DBXSqliteDriver;vcldbx;fmx;rtl;dbrtl;DbxClientDriver;IndySystem;bindcomp;inetdb;vclib;inetdbbde;DBXInterBaseDriver;DataSnapClient;DataSnapCommon;DBXOdbcDriver;DataSnapServer;DataSnapProviderClient;xmlrtl;DBXSybaseASEDriver;ibxpress;DbxCommonDriver;vclimg;IndyProtocols;dbxcds;DBXMySQLDriver;DatasnapConnectorsFreePascal;MetropolisUILiveTile;soaprtl;vclactnband;bindengine;vcldb;bindcompdbx;vcldsnap;bindcompvcl;vclie;vcltouch;DBXDb2Driver;bcbsmp;DBXOracleDriver;CustomIPTransport;vclribbon;VclSmp;dsnap;IndyIPServer;DBXInformixDriver;fmxase;vcl;IndyCore;DataSnapConnectors;IndyIPCommon;CloudService;DBXMSSQLDriver;dsnapcon;DBXFirebirdDriver;inet;fmxobj;vclx;inetdbxpress;svn;DBXSybaseASADriver;fmxdae;bdertl;dbexpress;bcbie;adortl;IndyIPClient;$(PackageImports)</PackageImports>
+        <_TCHARMapping>wchar_t</_TCHARMapping>
+        <Multithreaded>true</Multithreaded>
+        <ProjectType>CppVCLApplication</ProjectType>
+        <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
+        <Icon_MainIcon>$(BDS)\bin\cbuilder_PROJECTICON.ico</Icon_MainIcon>
+        <DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
+        <DynamicRTL>true</DynamicRTL>
+        <UsePackages>true</UsePackages>
+        <IntermediateOutputDir>.\$(Platform)\$(Config)</IntermediateOutputDir>
+        <FinalOutputDir>.\$(Platform)\$(Config)</FinalOutputDir>
+        <BCC_wpar>false</BCC_wpar>
+        <BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
+        <BCC_ExtendedErrorInfo>true</BCC_ExtendedErrorInfo>
+        <AllPackageLibs>vcl.lib;rtl.lib;bcbsmp.lib;vclx.lib;IndyCore.lib;IndySystem.lib;IndyProtocols.lib;vclimg.lib</AllPackageLibs>
+        <IncludePath>smoothedspline\;nmeap\;newmat\;SK42WGS84\;$(IncludePath)</IncludePath>
+        <ILINK_LibraryPath>smoothedspline\;nmeap\;newmat\;SK42WGS84\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <RunBCCOutOfProcess>true</RunBCCOutOfProcess>
+        <SubProcessesNumber>4</SubProcessesNumber>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <OutputExt>exe</OutputExt>
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <IncludePath>$(BDSINCLUDE)\windows\vcl;$(IncludePath)</IncludePath>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <VerInfo_Keys>CompanyName=;FileVersion=2017.11.7.142;InternalName=TrackProcessor;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <UWP_CppLogo44>$(BDS)\bin\Artwork\Windows\UWP\cppreg_UwpDefault_44.png</UWP_CppLogo44>
+        <UWP_CppLogo150>$(BDS)\bin\Artwork\Windows\UWP\cppreg_UwpDefault_150.png</UWP_CppLogo150>
+        <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
+        <ILINK_LibraryPath>D:\Prj\dev\TrackProcessor_new\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <VerInfo_MajorVer>2017</VerInfo_MajorVer>
+        <VerInfo_MinorVer>11</VerInfo_MinorVer>
+        <VerInfo_Release>7</VerInfo_Release>
+        <VerInfo_Build>142</VerInfo_Build>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <BCC_OptimizeForSpeed>false</BCC_OptimizeForSpeed>
+        <BCC_DisableOptimizations>true</BCC_DisableOptimizations>
+        <DCC_Optimize>false</DCC_Optimize>
+        <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+        <BCC_InlineFunctionExpansion>false</BCC_InlineFunctionExpansion>
+        <BCC_UseRegisterVariables>None</BCC_UseRegisterVariables>
+        <DCC_Define>DEBUG</DCC_Define>
+        <BCC_DebugLineNumbers>true</BCC_DebugLineNumbers>
+        <TASM_DisplaySourceLines>true</TASM_DisplaySourceLines>
+        <BCC_StackFrames>true</BCC_StackFrames>
+        <ILINK_FullDebugInfo>true</ILINK_FullDebugInfo>
+        <TASM_Debugging>Full</TASM_Debugging>
+        <BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
+        <ILINK_LibraryPath>$(BDSLIB)\$(PLATFORM)\debug;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <Defines>_DEBUG;$(Defines)</Defines>
+        <LinkPackageImports>vcl.bpi;rtl.bpi;bcbsmp.bpi;vclx.bpi;IndyCore.bpi;IndySystem.bpi;IndyProtocols.bpi;vclimg.bpi</LinkPackageImports>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <TASM_Debugging>None</TASM_Debugging>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <Defines>NDEBUG;$(Defines)</Defines>
+        <LinkPackageImports>vcl.bpi;rtl.bpi;bcbsmp.bpi;vclx.bpi;IndyCore.bpi;IndySystem.bpi;IndyProtocols.bpi;vclimg.bpi</LinkPackageImports>
+    </PropertyGroup>
+    <ItemGroup>
+        <CppCompile Include="CellEq.cpp">
+            <Form>CellEqualizer</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>CellEq.h</DependentOn>
+            <BuildOrder>2</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Cells.cpp">
+            <DependentOn>Cells.h</DependentOn>
+            <BuildOrder>3</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Confidence.cpp">
+            <Form>ConfidenceForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Confidence.h</DependentOn>
+            <BuildOrder>4</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="CSVFile.cpp">
+            <DependentOn>CSVFile.h</DependentOn>
+            <BuildOrder>5</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Cursors.cpp">
+            <DependentOn>Cursors.h</DependentOn>
+            <BuildOrder>6</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="DES.cpp">
+            <Form>DESForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>DES.h</DependentOn>
+            <BuildOrder>7</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="DouglasPeucker.cpp">
+            <DependentOn>DouglasPeucker.h</DependentOn>
+            <BuildOrder>8</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="DPFilter.cpp">
+            <Form>DPForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>DPFilter.h</DependentOn>
+            <BuildOrder>9</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="DPSmooth.cpp">
+            <DependentOn>DPSmooth.h</DependentOn>
+            <BuildOrder>10</BuildOrder>
+        </CppCompile>
+        <ResFiles Include="DragCursor.res">
+            <BuildOrder>46</BuildOrder>
+        </ResFiles>
+        <CppCompile Include="Drift.cpp">
+            <DependentOn>Drift.h</DependentOn>
+            <BuildOrder>11</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="DriftFilter.cpp">
+            <Form>DriftForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>DriftFilter.h</DependentOn>
+            <BuildOrder>12</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="GPSKalman.cpp">
+            <DependentOn>GPSKalman.h</DependentOn>
+            <BuildOrder>13</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="GPSKalmanForm.cpp">
+            <Form>GPSKalmanFilter</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>GPSKalmanForm.h</DependentOn>
+            <BuildOrder>14</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="GPXData.cpp">
+            <DependentOn>GPXData.h</DependentOn>
+            <BuildOrder>15</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="GPXFile.cpp">
+            <DependentOn>GPXFile.h</DependentOn>
+            <BuildOrder>16</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="HDOPFilter.cpp">
+            <Form>HDOPForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>HDOPFilter.h</DependentOn>
+            <BuildOrder>17</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="HP.cpp">
+            <Form>HPForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>HP.h</DependentOn>
+            <BuildOrder>18</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="HTTPGetFilesThread.cpp">
+            <DependentOn>HTTPGetFilesThread.h</DependentOn>
+            <BuildOrder>19</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="ImgSizeForm.cpp">
+            <Form>ImgSize</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>ImgSizeForm.h</DependentOn>
+            <BuildOrder>20</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="LowPass.cpp">
+            <Form>LowPassForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>LowPass.h</DependentOn>
+            <BuildOrder>21</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="MainFrame.cpp">
+            <Form>MainForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>MainFrame.h</DependentOn>
+            <BuildOrder>22</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Median.cpp">
+            <DependentOn>Median.h</DependentOn>
+            <BuildOrder>23</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="MedianFilter.cpp">
+            <Form>MedianForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>MedianFilter.h</DependentOn>
+            <BuildOrder>24</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Metadata.cpp">
+            <Form>EditMetadata</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Metadata.h</DependentOn>
+            <BuildOrder>25</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="newmat\bandmat.cpp">
+            <BuildOrder>64</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="newmat\cholesky.cpp">
+            <BuildOrder>65</BuildOrder>
+        </CppCompile>
+        <None Include="newmat\controlw.h">
+            <BuildOrder>66</BuildOrder>
+        </None>
+        <CppCompile Include="newmat\evalue.cpp">
+            <BuildOrder>67</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="newmat\fft.cpp">
+            <BuildOrder>68</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="newmat\hholder.cpp">
+            <BuildOrder>69</BuildOrder>
+        </CppCompile>
+        <None Include="newmat\include.h">
+            <BuildOrder>70</BuildOrder>
+        </None>
+        <CppCompile Include="newmat\jacobi.cpp">
+            <BuildOrder>71</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="newmat\myexcept.cpp">
+            <BuildOrder>72</BuildOrder>
+        </CppCompile>
+        <None Include="newmat\myexcept.h">
+            <BuildOrder>73</BuildOrder>
+        </None>
+        <CppCompile Include="newmat\newfft.cpp">
+            <BuildOrder>74</BuildOrder>
+        </CppCompile>
+        <None Include="newmat\newmat.h">
+            <BuildOrder>75</BuildOrder>
+        </None>
+        <CppCompile Include="newmat\newmat1.cpp">
+            <BuildOrder>76</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="newmat\newmat2.cpp">
+            <BuildOrder>77</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="newmat\newmat3.cpp">
+            <BuildOrder>78</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="newmat\newmat4.cpp">
+            <BuildOrder>79</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="newmat\newmat5.cpp">
+            <BuildOrder>80</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="newmat\newmat6.cpp">
+            <BuildOrder>81</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="newmat\newmat7.cpp">
+            <BuildOrder>82</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="newmat\newmat8.cpp">
+            <BuildOrder>83</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="newmat\newmat9.cpp">
+            <BuildOrder>84</BuildOrder>
+        </CppCompile>
+        <None Include="newmat\newmatap.h">
+            <BuildOrder>85</BuildOrder>
+        </None>
+        <CppCompile Include="newmat\newmatex.cpp">
+            <BuildOrder>86</BuildOrder>
+        </CppCompile>
+        <None Include="newmat\newmatio.h">
+            <BuildOrder>87</BuildOrder>
+        </None>
+        <CppCompile Include="newmat\newmatnl.cpp">
+            <BuildOrder>88</BuildOrder>
+        </CppCompile>
+        <None Include="newmat\newmatnl.h">
+            <BuildOrder>89</BuildOrder>
+        </None>
+        <None Include="newmat\newmatrc.h">
+            <BuildOrder>90</BuildOrder>
+        </None>
+        <CppCompile Include="newmat\newmatrm.cpp">
+            <BuildOrder>91</BuildOrder>
+        </CppCompile>
+        <None Include="newmat\newmatrm.h">
+            <BuildOrder>92</BuildOrder>
+        </None>
+        <CppCompile Include="newmat\nm_misc.cpp">
+            <BuildOrder>93</BuildOrder>
+        </CppCompile>
+        <None Include="newmat\precisio.h">
+            <BuildOrder>94</BuildOrder>
+        </None>
+        <CppCompile Include="newmat\solution.cpp">
+            <BuildOrder>95</BuildOrder>
+        </CppCompile>
+        <None Include="newmat\solution.h">
+            <BuildOrder>96</BuildOrder>
+        </None>
+        <CppCompile Include="newmat\sort.cpp">
+            <BuildOrder>97</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="newmat\submat.cpp">
+            <BuildOrder>98</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="newmat\svd.cpp">
+            <BuildOrder>99</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="NMEAFile.cpp">
+            <DependentOn>NMEAFile.h</DependentOn>
+            <BuildOrder>26</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="NMEAParser.cpp">
+            <DependentOn>NMEAParser.h</DependentOn>
+            <BuildOrder>27</BuildOrder>
+        </CppCompile>
+        <None Include="nmeap\nmeap.h">
+            <BuildOrder>98</BuildOrder>
+        </None>
+        <CppCompile Include="nmeap\nmeap01.c">
+            <BuildOrder>97</BuildOrder>
+        </CppCompile>
+        <None Include="nmeap\nmeap_def.h">
+            <BuildOrder>99</BuildOrder>
+        </None>
+        <ResourceCompile Include="NoTile.rc">
+            <Form>NoTile.res</Form>
+            <BuildOrder>55</BuildOrder>
+        </ResourceCompile>
+        <CppCompile Include="OSMCache.cpp">
+            <DependentOn>OSMCache.h</DependentOn>
+            <BuildOrder>28</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="OSMMap.cpp">
+            <DependentOn>OSMMap.h</DependentOn>
+            <BuildOrder>29</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="OSMTrackView.cpp">
+            <DependentOn>OSMTrackView.h</DependentOn>
+            <BuildOrder>30</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="PointGridSettings.cpp">
+            <Form>GridSettings</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>PointGridSettings.h</DependentOn>
+            <BuildOrder>31</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Points.cpp">
+            <Form>PointsForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Points.h</DependentOn>
+            <BuildOrder>32</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Profiler.cpp">
+            <DependentOn>Profiler.h</DependentOn>
+            <BuildOrder>33</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Profiles.cpp">
+            <Form>Profile</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Profiles.h</DependentOn>
+            <BuildOrder>34</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="PVTFile.cpp">
+            <DependentOn>PVTFile.h</DependentOn>
+            <BuildOrder>35</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Settings.cpp">
+            <Form>SettingsForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Settings.h</DependentOn>
+            <BuildOrder>36</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="ShifTime.cpp">
+            <Form>TimeShift</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>ShifTime.h</DependentOn>
+            <BuildOrder>37</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="SK42WGS84\DistAz.cpp">
+            <BuildOrder>67</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="SK42WGS84\SK42WGS84.cpp">
+            <BuildOrder>68</BuildOrder>
+        </CppCompile>
+        <None Include="SK42WGS84\SK42WGS84.h">
+            <BuildOrder>69</BuildOrder>
+        </None>
+        <CppCompile Include="SK42WGS84\WGSUTM.cpp">
+            <BuildOrder>70</BuildOrder>
+        </CppCompile>
+        <None Include="smoothedspline\F2C.H">
+            <BuildOrder>99</BuildOrder>
+        </None>
+        <CppCompile Include="smoothedspline\IS01D_C.C">
+            <BuildOrder>101</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="smoothedspline\smoothedspline.cpp">
+            <BuildOrder>100</BuildOrder>
+        </CppCompile>
+        <None Include="smoothedspline\smoothedspline.h">
+            <BuildOrder>100</BuildOrder>
+        </None>
+        <CppCompile Include="SpdFilter.cpp">
+            <Form>SpeedFilter</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>SpdFilter.h</DependentOn>
+            <BuildOrder>38</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Spline.cpp">
+            <DependentOn>Spline.h</DependentOn>
+            <BuildOrder>39</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="SplineSmooth.cpp">
+            <Form>SplineSmoothForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>SplineSmooth.h</DependentOn>
+            <BuildOrder>40</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Split.cpp">
+            <Form>SplitForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>Split.h</DependentOn>
+            <BuildOrder>41</BuildOrder>
+        </CppCompile>
+        <ResFiles Include="srtm.res">
+            <BuildOrder>58</BuildOrder>
+        </ResFiles>
+        <CppCompile Include="SRTMAlt.cpp">
+            <Form>STRMAltitude</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>SRTMAlt.h</DependentOn>
+            <BuildOrder>42</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="StaticNav.cpp">
+            <Form>SNEForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>StaticNav.h</DependentOn>
+            <BuildOrder>43</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="Statistics.cpp">
+            <DependentOn>Statistics.h</DependentOn>
+            <BuildOrder>44</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="tinyxml2.cpp">
+            <BuildOrder>69</BuildOrder>
+        </CppCompile>
+        <None Include="tinyxml2.h">
+            <BuildOrder>70</BuildOrder>
+        </None>
+        <CppCompile Include="TrackCells.cpp">
+            <DependentOn>TrackCells.h</DependentOn>
+            <BuildOrder>45</BuildOrder>
+        </CppCompile>
+        <ResFiles Include="TrackPoint.res">
+            <BuildOrder>62</BuildOrder>
+        </ResFiles>
+        <CppCompile Include="TrackProcessor.cpp">
+            <BuildOrder>0</BuildOrder>
+        </CppCompile>
+        <ResFiles Include="TrackProcessor.res">
+            <BuildOrder>1</BuildOrder>
+        </ResFiles>
+        <CppCompile Include="TrackStat.cpp">
+            <Form>TrackStatForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>TrackStat.h</DependentOn>
+            <BuildOrder>63</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="WAvg.cpp">
+            <DependentOn>WAvg.h</DependentOn>
+            <BuildOrder>64</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="WAvgFilter.cpp">
+            <Form>WAvgForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>WAvgFilter.h</DependentOn>
+            <BuildOrder>65</BuildOrder>
+        </CppCompile>
+        <FormResources Include="Profiles.dfm"/>
+        <FormResources Include="Settings.dfm"/>
+        <FormResources Include="PointGridSettings.dfm"/>
+        <FormResources Include="Points.dfm"/>
+        <FormResources Include="ShifTime.dfm"/>
+        <FormResources Include="SRTMAlt.dfm"/>
+        <FormResources Include="StaticNav.dfm"/>
+        <FormResources Include="TrackStat.dfm"/>
+        <FormResources Include="WAvgFilter.dfm"/>
+        <FormResources Include="SplineSmooth.dfm"/>
+        <FormResources Include="Split.dfm"/>
+        <FormResources Include="SpdFilter.dfm"/>
+        <FormResources Include="HDOPFilter.dfm"/>
+        <FormResources Include="HP.dfm"/>
+        <FormResources Include="GPSKalmanForm.dfm"/>
+        <FormResources Include="MedianFilter.dfm"/>
+        <FormResources Include="Metadata.dfm"/>
+        <FormResources Include="ImgSizeForm.dfm"/>
+        <FormResources Include="LowPass.dfm"/>
+        <FormResources Include="MainFrame.dfm"/>
+        <FormResources Include="DES.dfm"/>
+        <FormResources Include="CellEq.dfm"/>
+        <FormResources Include="Confidence.dfm"/>
+        <FormResources Include="DriftFilter.dfm"/>
+        <FormResources Include="DPFilter.dfm"/>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>CPlusPlusBuilder.Personality.12</Borland.Personality>
+        <Borland.ProjectType>CppVCLApplication</Borland.ProjectType>
+        <BorlandProject>
+            <CPlusPlusBuilder.Personality>
+                <VersionInfo>
+                    <VersionInfo Name="IncludeVerInfo">False</VersionInfo>
+                    <VersionInfo Name="AutoIncBuild">False</VersionInfo>
+                    <VersionInfo Name="MajorVer">1</VersionInfo>
+                    <VersionInfo Name="MinorVer">0</VersionInfo>
+                    <VersionInfo Name="Release">0</VersionInfo>
+                    <VersionInfo Name="Build">0</VersionInfo>
+                    <VersionInfo Name="Debug">False</VersionInfo>
+                    <VersionInfo Name="PreRelease">False</VersionInfo>
+                    <VersionInfo Name="Special">False</VersionInfo>
+                    <VersionInfo Name="Private">False</VersionInfo>
+                    <VersionInfo Name="DLL">False</VersionInfo>
+                    <VersionInfo Name="Locale">1033</VersionInfo>
+                    <VersionInfo Name="CodePage">1252</VersionInfo>
+                </VersionInfo>
+                <VersionInfoKeys>
+                    <VersionInfoKeys Name="CompanyName"/>
+                    <VersionInfoKeys Name="FileDescription"/>
+                    <VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="InternalName"/>
+                    <VersionInfoKeys Name="LegalCopyright"/>
+                    <VersionInfoKeys Name="LegalTrademarks"/>
+                    <VersionInfoKeys Name="OriginalFilename"/>
+                    <VersionInfoKeys Name="ProductName"/>
+                    <VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="Comments"/>
+                </VersionInfoKeys>
+                <ProjectProperties>
+                    <ProjectProperties Name="AutoShowDeps">False</ProjectProperties>
+                    <ProjectProperties Name="ManagePaths">True</ProjectProperties>
+                    <ProjectProperties Name="VerifyPackages">True</ProjectProperties>
+                    <ProjectProperties Name="IndexFiles">False</ProjectProperties>
+                </ProjectProperties>
+                <Source>
+                    <Source Name="MainSource">TrackProcessor.cpp</Source>
+                </Source>
+            </CPlusPlusBuilder.Personality>
+            <Platforms>
+                <Platform value="Win32">True</Platform>
+            </Platforms>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Condition="Exists('$(BDS)\Bin\CodeGear.Cpp.Targets')" Project="$(BDS)\Bin\CodeGear.Cpp.Targets"/>
+    <Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj"/>
+    <Import Project="$(MSBuildProjectName).deployproj" Condition="Exists('$(MSBuildProjectName).deployproj')"/>
+</Project>

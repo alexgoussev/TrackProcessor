@@ -7,3 +7,10 @@
 3. Распаковать скачанный iso-файл и установить C++Builder Starter Edition запустив Setup.exe из поддиректории Install.
 
 4. Запустить C++Builder и открыть проект TrackProcessor.cbproj
+
+
+Примечания.
+
+* Для нормальной работы автоматического скачивания файлов SRTM при использовании команды меню "Set SRTM Altitude" скопируйте файлы libeay32.dll и ssleay32.dll из папки openssl в рабочую папку программы.
+
+* В процессе работы TrackProcessor создаст в рабочей папке файл с настройками "TrackProcessor.ini" две подпапки - "hgt" и "cache".

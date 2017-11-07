@@ -11,6 +11,13 @@
 
 Примечания.
 
-* Для нормальной работы автоматического скачивания файлов SRTM при использовании команды меню "Set SRTM Altitude" скопируйте файлы libeay32.dll и ssleay32.dll из папки openssl в рабочую папку программы.
+* Если при компиляции и сборке проекта появляется ошибка компоновщика:
+[ilink32 Warning] Warning: Error detected (LME200)
+[ilink32 Error] Error: Unable to perform link
+то скачайте со страницы http://cc.embarcadero.com/Item/30459 утилиту LAMarker и модифицируйте с её помощью файл компоновщика ilink32.exe (он находится в поддиректории bin установочной директории C++Builder), запустив утилиту из командной строки:
+LAMarker.exe -M -Filink32.exe
+Если не помогло, попробуйте советы из пунктов 2 и 3 сообщения по ссылке https://forums.embarcadero.com/message.jspa?messageID=867865#867865
 
-* В процессе работы TrackProcessor создаст в рабочей папке файл с настройками "TrackProcessor.ini" две подпапки - "hgt" и "cache".
+* Для нормальной работы автоматического скачивания файлов SRTM при использовании команды меню "Set SRTM Altitude" скопируйте файлы libeay32.dll и ssleay32.dll из директории openssl в рабочую директорию программы.
+
+* В процессе работы TrackProcessor создаст в рабочей директории файл с настройками "TrackProcessor.ini" две поддиректории - "hgt" и "cache".
